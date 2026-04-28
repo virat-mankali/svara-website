@@ -218,8 +218,8 @@ export default function Home() {
                     Svara pasted
                   </p>
                   <p className="mt-2 text-[#34402d]">
-                    Please share the release page and keep the tone calm,
-                    polished, and easy to understand.
+                    Remind me to send the release page to people and make it
+                    sound calmer.
                   </p>
                 </div>
               </div>
