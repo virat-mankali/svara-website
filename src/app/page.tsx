@@ -42,9 +42,13 @@ export default function Home() {
         <div className="relative z-10 mx-auto flex w-full max-w-7xl flex-col">
           <nav className="flex items-center justify-between rounded-full border border-[#d8cbbb]/80 bg-[#fffaf2]/72 px-4 py-3 shadow-[0_16px_50px_rgba(79,56,38,0.08)] backdrop-blur-xl sm:px-5">
             <a href="#top" className="flex items-center gap-3" aria-label="Svara home">
-              <span className="grid size-9 place-items-center rounded-full bg-[#24201b] text-sm font-semibold text-[#fff7ea]">
-                S
-              </span>
+              <Image
+                src="/svara.png"
+                alt="Svara logo"
+                width={36}
+                height={36}
+                className="rounded-full"
+              />
               <span className="text-base font-semibold tracking-[0.18em] text-[#342d24]">
                 SVARA
               </span>

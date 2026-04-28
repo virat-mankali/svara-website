@@ -17,6 +17,15 @@ export const metadata: Metadata = {
   description:
     "Svara is a free macOS voice dictation app that turns speech into clean pasted text with Groq or Local Whisper.",
   metadataBase: new URL("https://svara.app"),
+  icons: {
+    icon: [
+      { url: "/32x32.png", sizes: "32x32", type: "image/png" },
+      { url: "/128x128.png", sizes: "128x128", type: "image/png" },
+      { url: "/128x128@2x.png", sizes: "256x256", type: "image/png" },
+    ],
+    apple: "/128x128.png",
+    other: [{ rel: "icon", url: "/icon.ico" }],
+  },
   openGraph: {
     title: "Svara - Free macOS Voice Dictation",
     description:
