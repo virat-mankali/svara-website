@@ -270,6 +270,33 @@ export default function Home() {
         </div>
       </section>
 
+      <section className="border-t border-[#e0d2bd] bg-[#fff8ed] px-5 py-20 sm:px-8 lg:px-10">
+        <div className="mx-auto flex max-w-7xl flex-col items-center gap-8 text-center lg:flex-row lg:items-center lg:gap-14 lg:text-left">
+          <Image
+            src="/virat.jpg"
+            alt="Virat Mankali"
+            width={160}
+            height={160}
+            className="shrink-0 rounded-full border-4 border-[#e4d6c4] object-cover shadow-[0_16px_44px_rgba(91,68,43,0.12)]"
+          />
+          <div>
+            <p className="text-sm font-semibold uppercase tracking-[0.22em] text-[#9a6a45]">
+              Built by
+            </p>
+            <h2 className="mt-3 text-3xl font-semibold text-[#241f1a] sm:text-4xl">
+              Virat Mankali
+            </h2>
+            <p className="mt-4 max-w-2xl text-lg leading-8 text-[#5d5044]">
+              I&apos;m a Computer Science student who liked the idea of voice
+              dictation tools like Wispr Flow but didn&apos;t have the budget for
+              another subscription. So I built Svara — a free, open-source
+              alternative that does one thing well: turn messy speech into clean
+              text on macOS, without the price tag.
+            </p>
+          </div>
+        </div>
+      </section>
+
       <footer className="border-t border-[#dfd0ba] bg-[#fff8ed] px-5 py-8 sm:px-8 lg:px-10">
         <div className="mx-auto flex max-w-7xl flex-col gap-4 text-sm text-[#716454] sm:flex-row sm:items-center sm:justify-between">
           <p>Svara is open source and not affiliated with Wispr Flow.</p>
