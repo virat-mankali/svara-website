@@ -26,3 +26,109 @@ html {
   background: #dfe8d8;
   color: #241f1a;
 }
+
+.hero-grid {
+  background-image:
+    linear-gradient(rgba(154, 106, 69, 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(154, 106, 69, 0.08) 1px, transparent 1px);
+  background-position: center;
+  background-size: 36px 36px;
+  mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.9), transparent 92%);
+}
+
+.hero-sheen {
+  background:
+    linear-gradient(120deg, rgba(255, 250, 242, 0.92) 8%, rgba(255, 250, 242, 0.4) 36%, rgba(255, 250, 242, 0) 54%),
+    linear-gradient(180deg, rgba(223, 232, 216, 0.44) 0%, rgba(223, 232, 216, 0.12) 44%, rgba(223, 232, 216, 0) 72%);
+  animation: hero-pan 18s ease-in-out infinite alternate;
+}
+
+.hero-beams {
+  background:
+    repeating-linear-gradient(
+      180deg,
+      rgba(138, 101, 71, 0.14) 0,
+      rgba(138, 101, 71, 0.14) 1px,
+      transparent 1px,
+      transparent 24px
+    ),
+    linear-gradient(135deg, rgba(223, 232, 216, 0.7) 0%, rgba(223, 232, 216, 0.16) 46%, rgba(223, 232, 216, 0) 72%);
+  mask-image: linear-gradient(90deg, transparent 0%, rgba(0, 0, 0, 0.95) 26%, rgba(0, 0, 0, 0.55) 76%, transparent 100%);
+  opacity: 0.7;
+  transform: skewX(-18deg);
+  transform-origin: center;
+}
+
+.hero-meter {
+  transform-origin: bottom;
+  animation: hero-meter 1.8s ease-in-out infinite;
+}
+
+.hero-float {
+  animation: hero-float 6s ease-in-out infinite;
+}
+
+.hero-float-delayed {
+  animation: hero-float 6s ease-in-out infinite;
+  animation-delay: 1.8s;
+}
+
+.hero-scan-line {
+  animation: hero-scan 8s linear infinite;
+}
+
+@keyframes hero-pan {
+  0% {
+    opacity: 0.72;
+    transform: translate3d(-2%, -1%, 0);
+  }
+  100% {
+    opacity: 1;
+    transform: translate3d(2%, 1%, 0);
+  }
+}
+
+@keyframes hero-meter {
+  0%,
+  100% {
+    transform: scaleY(0.72);
+  }
+  50% {
+    transform: scaleY(1.12);
+  }
+}
+
+@keyframes hero-float {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+  50% {
+    transform: translate3d(0, -8px, 0);
+  }
+}
+
+@keyframes hero-scan {
+  0% {
+    transform: translateY(0);
+    opacity: 0;
+  }
+  12%,
+  82% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(250px);
+    opacity: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-sheen,
+  .hero-meter,
+  .hero-float,
+  .hero-float-delayed,
+  .hero-scan-line {
+    animation: none;
+  }
+}
