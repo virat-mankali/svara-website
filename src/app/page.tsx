@@ -2,6 +2,7 @@ import Image from "next/image";
 
 const releaseUrl = "https://github.com/virat-mankali/svara/releases";
 const repoUrl = "https://github.com/virat-mankali/svara";
+const heroPulseHeights = [22, 34, 18, 42, 26, 50, 30, 44, 24];
 
 const features = [
   {
@@ -27,17 +28,12 @@ const steps = [
 export default function Home() {
   return (
     <main className="min-h-screen overflow-hidden bg-[#f8f1e6] text-[#241f1a]">
-      <section className="relative min-h-[86svh] px-5 pb-12 pt-5 sm:px-8 lg:px-10">
-        <Image
-          src="/svara-hero.png"
-          alt="A calm product mockup showing a voice dictation interface, waveforms, and cleaned transcript bubbles."
-          fill
-          priority
-          sizes="100vw"
-          className="object-cover object-center"
-        />
-        <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(248,241,230,0.99)_0%,rgba(248,241,230,0.94)_42%,rgba(248,241,230,0.66)_68%,rgba(248,241,230,0.22)_100%)]" />
-        <div className="absolute inset-x-0 bottom-0 h-28 bg-[linear-gradient(180deg,rgba(248,241,230,0)_0%,#f8f1e6_82%)]" />
+      <section className="relative overflow-hidden border-b border-[#e0d2bd] bg-[linear-gradient(180deg,#fbf6ee_0%,#f8f1e6_56%,#f5ecde_100%)] px-5 pb-14 pt-5 sm:px-8 lg:px-10">
+        <div className="pointer-events-none absolute inset-0">
+          <div className="hero-grid absolute inset-0" />
+          <div className="hero-sheen absolute inset-0" />
+          <div className="hero-beams absolute inset-y-0 right-[-12%] w-[62%]" />
+        </div>
 
         <div className="relative z-10 mx-auto flex w-full max-w-7xl flex-col">
           <nav className="flex items-center justify-between rounded-full border border-[#d8cbbb]/80 bg-[#fffaf2]/72 px-4 py-3 shadow-[0_16px_50px_rgba(79,56,38,0.08)] backdrop-blur-xl sm:px-5">
@@ -72,20 +68,20 @@ export default function Home() {
             </a>
           </nav>
 
-          <div className="flex min-h-[calc(86svh-84px)] items-center py-16">
-            <div id="top" className="max-w-3xl pt-10">
-              <p className="mb-5 inline-flex rounded-full border border-[#d9c9b2] bg-[#fff8ed]/82 px-4 py-2 text-sm font-semibold text-[#6c5842] shadow-[0_10px_34px_rgba(86,64,43,0.08)] backdrop-blur">
+          <div className="grid min-h-[calc(86svh-84px)] gap-14 py-16 lg:grid-cols-[minmax(0,1.05fr)_minmax(340px,0.95fr)] lg:items-center">
+            <div id="top" className="max-w-3xl pt-10 lg:pt-14">
+              <p className="mb-5 inline-flex rounded-full border border-[#d9c9b2] bg-[#fff8ed]/84 px-4 py-2 text-sm font-semibold text-[#6c5842] shadow-[0_10px_34px_rgba(86,64,43,0.08)] backdrop-blur">
                 Free macOS voice dictation for people who think out loud
               </p>
-              <h1 className="max-w-4xl text-[clamp(3rem,8vw,7.8rem)] font-semibold leading-[0.9] tracking-normal text-[#211c18]">
-                Speak it.
+              <h1 className="max-w-4xl text-5xl font-semibold leading-[0.92] tracking-normal text-[#211c18] sm:text-7xl lg:text-[6.6rem]">
+                Speak in drafts.
                 <br />
-                Ship it.
+                <span className="text-[#8a6547]">Land in clarity.</span>
               </h1>
-              <p className="mt-7 max-w-xl text-lg leading-8 text-[#5f5142] sm:text-xl">
+              <p className="mt-7 max-w-2xl text-lg leading-8 text-[#5f5142] sm:text-xl">
                 Svara is a tiny menu bar app that turns your voice into polished
                 text anywhere on your Mac. Press a shortcut, talk naturally, and
-                let it paste the result where you were already working.
+                watch the rough thought settle into something you can send.
               </p>
               <div className="mt-9 flex flex-col gap-3 sm:flex-row">
                 <a
@@ -101,6 +97,120 @@ export default function Home() {
                   View source
                 </a>
               </div>
+              <div className="mt-10 grid gap-3 sm:grid-cols-3">
+                <div className="rounded-[8px] border border-[#dfd0ba] bg-[#fffaf2]/82 p-4 shadow-[0_16px_44px_rgba(91,68,43,0.06)] backdrop-blur">
+                  <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#9a6a45]">
+                    Trigger
+                  </p>
+                  <p className="mt-2 text-base font-semibold text-[#241f1a]">
+                    Shortcut first
+                  </p>
+                  <p className="mt-1 text-sm leading-6 text-[#6a5b4b]">
+                    Start talking without changing apps or breaking your flow.
+                  </p>
+                </div>
+                <div className="rounded-[8px] border border-[#dfd0ba] bg-[#fffaf2]/82 p-4 shadow-[0_16px_44px_rgba(91,68,43,0.06)] backdrop-blur">
+                  <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#9a6a45]">
+                    Engine
+                  </p>
+                  <p className="mt-2 text-base font-semibold text-[#241f1a]">
+                    Groq or local
+                  </p>
+                  <p className="mt-1 text-sm leading-6 text-[#6a5b4b]">
+                    Pick speed when you want it, or privacy when you need it.
+                  </p>
+                </div>
+                <div className="rounded-[8px] border border-[#dfd0ba] bg-[#fffaf2]/82 p-4 shadow-[0_16px_44px_rgba(91,68,43,0.06)] backdrop-blur">
+                  <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#9a6a45]">
+                    Result
+                  </p>
+                  <p className="mt-2 text-base font-semibold text-[#241f1a]">
+                    Ready to paste
+                  </p>
+                  <p className="mt-1 text-sm leading-6 text-[#6a5b4b]">
+                    Your text comes back calmer, cleaner, and already usable.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div className="relative mx-auto w-full max-w-[520px] lg:justify-self-end">
+              <div className="hero-float absolute left-4 top-6 rounded-full border border-[#dac9b1] bg-[#fffaf2]/88 px-4 py-2 text-sm font-semibold text-[#6b5a48] shadow-[0_16px_40px_rgba(79,56,38,0.12)] backdrop-blur">
+                Option + Space
+              </div>
+              <div className="hero-float-delayed absolute bottom-10 right-0 rounded-full border border-[#d3dfc9] bg-[#f4f8ef]/92 px-4 py-2 text-sm font-semibold text-[#4d5e42] shadow-[0_16px_40px_rgba(73,92,55,0.12)] backdrop-blur">
+                Clean paste ready
+              </div>
+              <div className="rounded-[8px] border border-[#dccdb8] bg-[#fffaf2]/78 p-4 shadow-[0_28px_80px_rgba(91,68,43,0.14)] backdrop-blur-xl">
+                <div className="rounded-[8px] border border-[#eadcca] bg-[#fcf6ec] p-5">
+                  <div className="mb-6 flex items-center justify-between border-b border-[#e6d8c5] pb-4">
+                    <div className="flex items-center gap-3">
+                      <Image
+                        src="/svara.png"
+                        alt="Svara logo"
+                        width={38}
+                        height={38}
+                        className="rounded-full"
+                      />
+                      <div>
+                        <p className="text-sm font-semibold text-[#241f1a]">
+                          Svara live
+                        </p>
+                        <p className="text-xs text-[#7d6b59]">
+                          Floating on top of your current app
+                        </p>
+                      </div>
+                    </div>
+                    <span className="rounded-full border border-[#d3dfc9] bg-[#f3f8ed] px-3 py-1 text-xs font-semibold text-[#556647]">
+                      Listening
+                    </span>
+                  </div>
+
+                  <div className="relative overflow-hidden rounded-[8px] border border-[#e8d9c7] bg-[linear-gradient(180deg,#fffaf1_0%,#f8efe2_100%)] p-5">
+                    <div className="hero-scan-line absolute inset-x-5 top-0 h-px bg-[linear-gradient(90deg,transparent,rgba(138,101,71,0.6),transparent)]" />
+                    <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[#9a6a45]">
+                      Current thought
+                    </p>
+                    <p className="mt-3 max-w-sm text-lg leading-8 text-[#4d4034]">
+                      okay write a release note that sounds calm, direct, and
+                      less like I was sprinting when I recorded it
+                    </p>
+                    <div className="mt-6 flex h-16 items-end gap-1.5">
+                      {heroPulseHeights.map((height, index) => (
+                        <span
+                          key={`${height}-${index}`}
+                          className="hero-meter w-2 rounded-full bg-[#7c8f6e]"
+                          style={{
+                            height,
+                            animationDelay: `${index * 120}ms`,
+                          }}
+                        />
+                      ))}
+                    </div>
+                  </div>
+
+                  <div className="mt-4 grid gap-3">
+                    <div className="rounded-[8px] border border-[#eadbca] bg-[#fbf3e8] p-4">
+                      <p className="text-sm font-semibold text-[#917257]">
+                        Heard
+                      </p>
+                      <p className="mt-2 text-[#6c5d4e]">
+                        remind me to send the release page around and make the
+                        copy feel calmer
+                      </p>
+                    </div>
+                    <div className="rounded-[8px] border border-[#d6e0cd] bg-[#f4f8ef] p-4">
+                      <p className="text-sm font-semibold text-[#657a55]">
+                        Pasted
+                      </p>
+                      <p className="mt-2 text-[#34402d]">
+                        Please send the release page around today. I tightened
+                        the copy so it reads a little calmer and more direct.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -108,7 +218,7 @@ export default function Home() {
 
       <section
         id="story"
-        className="border-y border-[#e0d2bd] bg-[#fff8ed] px-5 py-16 sm:px-8 lg:px-10"
+        className="border-b border-[#e0d2bd] bg-[#fff8ed] px-5 py-16 sm:px-8 lg:px-10"
       >
         <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
           <div>
