@@ -18,7 +18,7 @@ The site is built as a small, single-page Next.js app with a calm cream visual s
 - Tailwind CSS 4
 - Bun
 
-## Local Development
+## Local Development.
 
 Install dependencies:
 
